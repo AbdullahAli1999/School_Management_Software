@@ -37,4 +37,9 @@ public class TeacherController {
         teacherService.deleteTeacher(id);
         return ResponseEntity.status(200).body(new ApiResponse("Deleted"));
     }
+    //Get teacher from id
+    @GetMapping("/get/{id}")
+    public Teacher getTeacherById(@PathVariable Integer id) {
+        return teacherService.getTeacherById(id);
+    }
 }

@@ -37,5 +37,5 @@ public class AddressController {
         addressService.deleteAddress(id);
         return ResponseEntity.status(200).body(new ApiResponse("Deleted"));
     }
-    
+
 }
