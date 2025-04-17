@@ -71,12 +71,12 @@ public class CourseService {
     }
 
     //get course details by id
-    public Course getCourseDetailsById(Integer id){
+    public String getCourseDetailsById(Integer id){
         Course course = courseRepository.findCourseById(id);
         if(course == null){
             throw new ApiException("Not found");
         }
-        return course;
+        return course.getTeacher().getName();
     }
 
 }
