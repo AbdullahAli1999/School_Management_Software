@@ -45,11 +45,11 @@ public class TeacherService {
 
     // GET all teacher details from id
     public Teacher getTeacherById(Integer id){
-        Teacher teacherId = teacherRepository.findTeacherById(id);
-        if(teacherId == null){
+        Teacher teacher = teacherRepository.findTeacherById(id);
+        if(teacher == null){
             throw new ApiException("Not found");
         }
-        return teacherId;
+        return teacher;
     }
 
 }
