@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,4 +23,7 @@ public class Course {
     @JoinColumn(name = "teacher_id",referencedColumnName = "id")
     @JsonIgnore
     private Teacher teacher;
+
+    @ManyToMany(mappedBy = "courses")
+    private Set<Student> students;
 }
